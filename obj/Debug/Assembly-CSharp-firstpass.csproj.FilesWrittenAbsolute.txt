@@ -1,0 +1,17 @@
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/UnityEngine.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/UnityEditor.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Mono.Cecil.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Unity.DataContract.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/bonnieyu/Desktop/virtualReality/GearVR Test/Temp/bin/Debug/Mono.Cecil.Mdb.dll

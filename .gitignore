@@ -1,0 +1,12 @@
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.apk
+Library/
+Temp/
+sysinfo.txt
