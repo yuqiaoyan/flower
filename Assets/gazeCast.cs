@@ -46,30 +46,69 @@ public class gazeCast : MonoBehaviour {
 
 		}
 
-		if (Physics.Raycast (transform.position, fwd, out hit,layerMask1)) {
-//			Debug.Log ("this is layer mask " + layerMask1.ToString());
-			seenObj = hit.transform.GetComponent<IGazeable> ();
-			if (seenObj != null) {
+		if (GameManager.currScene == GameManager.scenes.proto2Input) {
 
-				seenObj.onGazeEnter ();
-				currObj = seenObj;
+			if (Physics.Raycast (transform.position, fwd, out hit, layerMask1)) {
+				//			Debug.Log ("this is layer mask " + layerMask1.ToString());
+				seenObj = hit.transform.GetComponent<IGazeable> ();
+				if (seenObj != null) {
 
-			} else{ 
-				if (seenObj == null) {
-//					Debug.Log ("SeenObj is Null");
-				} else if (currObj == null) {
-//					Debug.Log ("CurrObj is Null");
+					seenObj.onGazeEnter ();
+					currObj = seenObj;
+
+				} else { 
+					if (seenObj == null) {
+						//					Debug.Log ("SeenObj is Null");
+					} else if (currObj == null) {
+						//					Debug.Log ("CurrObj is Null");
+					} 
+
+					if (currObj != null) {
+						Debug.Log ("CurrObj is " + currObj.ToString ());
+
+						currObj.onGazeExit ();
+						currObj = null;
+					}
 				} 
+				//			Debug.Log ("hit " + hit.collider.gameObject.name);
 
-				if (currObj != null) {
-					Debug.Log ("CurrObj is " + currObj.ToString());
+			}
+		}
+		else if(GameManager.currScene==GameManager.scenes.proto1Snap){
+			hoverFlower flowerMethods = flower.GetComponent<hoverFlower> ();
+			if (Physics.Raycast (transform.position, fwd, out hit, layerMask1)) {
+				seenObj = hit.transform.GetComponent<IGazeable> ();
+				
+				float flDistance = Vector3.Distance (hit.point, flower.transform.position);
 
-					currObj.onGazeExit ();
-					currObj = null;
+				//Debug.Log ("This is im impact point" + hit.point.ToString ());
+				Debug.Log ("flower distance is" + flDistance.ToString ());
+
+
+				if (GameManager.pickedUp == false) {
+					
+					if (flDistance > 0.70f && flDistance < 2f) {
+						Debug.Log ("hover flower");
+						flowerMethods.onGazeEnter ();
+
+						Material glowOrb = GameObject.Find ("flowerGlow").GetComponent<Renderer> ().material;
+						Utilities.setAlpha (glowOrb, flDistance*.5f);
+
+					} else if (flDistance < 0.70f) {
+						Debug.Log ("Pick up flower");
+						GameManager.onGaze = true;
+						flowerMethods.pickUpFlower ();
+					} else {
+						flowerMethods.onGazeExit ();
+					}
+				} else { //simple code to drop flower
+					bool down = Input.GetKeyDown (KeyCode.Space);
+					bool leftClick = Input.GetMouseButton (0);
+
+					flowerMethods.dropFlower ();
 				}
-			} 
-//			Debug.Log ("hit " + hit.collider.gameObject.name);
 
+			}
 		}
 	
 	}

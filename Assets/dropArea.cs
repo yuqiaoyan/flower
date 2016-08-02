@@ -77,11 +77,17 @@ public class dropArea : MonoBehaviour {
 				}
 
 				droppable = false;
-			} else if(GameManager.currScene==GameManager.scenes.proto1Snap){
+			} else{
 				Material flowerMat = flower.GetComponent<Renderer> ().material;
 				Utilities.setAlpha (flowerMat, 1F);
 	
 				flower.transform.position = GameManager.dropLocation;
+				flower.transform.parent = null;
+				GameManager.onGaze = false;
+				GameManager.pickedUp = false;
+
+				tFlowerRend.enabled = false;
+				droppable = false;
 			}
 
 

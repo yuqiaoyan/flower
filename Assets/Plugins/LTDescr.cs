@@ -12,6 +12,7 @@ public interface LTDescr
 	bool hasPhysics { get; set; }
 	bool onCompleteOnRepeat { get; set; }
 	bool onCompleteOnStart { get; set; }
+	bool useRecursion { get; set; }
 	float passed { get; set; }
 	float delay { get; set; }
 	float time { get; set; }
@@ -56,6 +57,9 @@ public interface LTDescr
 	void cleanup();
 	int uniqueId { get; }
 	int id { get; }
+	#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2
+	SpriteRenderer spriteRen{ get; set; }
+	#endif
 	void init();
 	LTDescr pause();
 	void reset();
@@ -74,6 +78,7 @@ public interface LTDescr
 	LTDescr setHasInitialized(bool has);
 	LTDescr setId(uint id);
 	LTDescr setIgnoreTimeScale(bool useUnScaledTime);
+	LTDescr setSpeed( float speed );
 	LTDescr setLoopClamp();
 	LTDescr setLoopClamp(int loops);
 	LTDescr setLoopCount(int loopCount);
@@ -91,10 +96,12 @@ public interface LTDescr
 	LTDescr setOnUpdate(Action<float, object> onUpdate, object onUpdateParam = null);
 	LTDescr setOnUpdate(Action<float> onUpdate);
 	LTDescr setOnUpdate(Action<UnityEngine.Color> onUpdate);
+	LTDescr setOnUpdate(Action<UnityEngine.Color,object> onUpdate );
 	LTDescr setOnUpdate(Action<UnityEngine.Vector2> onUpdate, object onUpdateParam = null);
 	LTDescr setOnUpdate(Action<UnityEngine.Vector3, object> onUpdate, object onUpdateParam = null);
 	LTDescr setOnUpdate(Action<UnityEngine.Vector3> onUpdate, object onUpdateParam = null);
 	LTDescr setOnUpdateColor(Action<UnityEngine.Color> onUpdate);
+	LTDescr setOnUpdateColor(Action<UnityEngine.Color,object> onUpdate );
 	LTDescr setOnUpdateObject(Action<float, object> onUpdate);
 	LTDescr setOnUpdateParam(object onUpdateParam);
 	LTDescr setOnUpdateRatio(Action<float, float> onUpdate);
@@ -109,6 +116,7 @@ public interface LTDescr
 	LTDescr setRect(LTRect rect);
 	LTDescr setRect(UnityEngine.Rect rect);
 	LTDescr setRepeat(int repeat);
+	LTDescr setRecursive(bool useRecursion);
 	#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2 && !UNITY_4_3 && !UNITY_4_5
 	LTDescr setRect(UnityEngine.RectTransform rect);
 	LTDescr setSprites(UnityEngine.Sprite[] sprites);
