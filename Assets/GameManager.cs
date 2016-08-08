@@ -11,7 +11,8 @@ public static class GameManager
 	public enum layerBits{
 		ignoreRaycast = 2,
 		flower = 8,
-		droppable = 9
+		droppable = 9,
+		flowerGlow = 11
 	}
 
 	public enum layerMasks{

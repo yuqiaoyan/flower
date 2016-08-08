@@ -36,7 +36,7 @@ public class hoverFlower : MonoBehaviour, IGazeable {
 	}
 
 	public void onGazeExit(){
-		Debug.Log ("++flower gazeExit");
+		//Debug.Log ("++flower gazeExit");
 		GameManager.onGaze = false;
 		if (GameManager.pickedUp == false) {
 			glowRend.enabled = false;
